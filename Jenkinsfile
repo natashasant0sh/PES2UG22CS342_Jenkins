@@ -1,5 +1,5 @@
 pipeline {
-    gent any
+    agent any
 
     stages {
         stage('Build') {
@@ -13,12 +13,12 @@ pipeline {
         stage('Test') {
             steps {
                 script {
-                    sh './PES2UG22CS342' 
+                    sh './PES2UG22CS342'  
                 }
             }
         }
 
-        stage('Deploy') {
+        stge('Deploy') {
             steps {
                 echo 'Deploying Application...'
             }
