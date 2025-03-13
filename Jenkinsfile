@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    sh 'g++ new_hello.cpp -o PES2UG22CS347' // Compile new_hello.cpp and generate PES2UG22CS347 executable
+                    sh 'g++ new.cpp -o PES2UG22CS342' // Compile hello.cpp and generate PES2UG22CS342 executable
                 }
             }
         }
@@ -13,7 +13,7 @@ pipeline {
         stage('Test') {
             steps {
                 script {
-                    sh './WRONG_EXECUTABLE' // Intentional error: Wrong executable name
+                    sh './PES2UG22CS342' // Run the compiled executable
                 }
             }
         }
