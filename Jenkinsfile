@@ -1,11 +1,11 @@
 pipeline {
-    agent any
+    agent any  // Runs pipeline on any available agent
 
     stages {
         stage('Build') {
             steps {
                 script {
-                    sh 'g++ new.cpp -o PES2UG22CS342' 
+                    sh 'g++ new_hello.cpp -o PES2UG22CS347' // Compile new_hello.cpp and generate PES2UG22CS347 executable
                 }
             }
         }
@@ -13,21 +13,21 @@ pipeline {
         stage('Test') {
             steps {
                 script {
-                    sh './PES2UG22CS342'  
+                    sh './WRONG_EXECUTABLE' // Intentional error: Wrong executable name
                 }
             }
         }
 
-        stge('Deploy') {
+        stage('Deploy') {
             steps {
-                echo 'Deploying Application...'
+                echo 'Deploying Application...'  // Simulated deployment step
             }
         }
     }
 
     post {
         failure {
-            echo 'Pipeline failed'
+            echo 'Pipeline failed'  // Display failure message if any stage fails
         }
     }
 }
