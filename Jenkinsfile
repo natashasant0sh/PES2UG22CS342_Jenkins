@@ -1,11 +1,11 @@
 pipeline {
-    agent any
+    gent any
 
     stages {
         stage('Build') {
             steps {
                 script {
-                    sh 'g++ wrong.cpp -o PES2UG22CS342' // Intentional error: wrong file name
+                    sh 'g++ new.cpp -o PES2UG22CS342' 
                 }
             }
         }
